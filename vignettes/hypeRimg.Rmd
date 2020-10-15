@@ -1,0 +1,51 @@
+---
+title: "hypeRimg"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{hypeRimg}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hypeRimg)
+```
+
+## TODO 
+```{r eval=F}
+obj <- new("hypeRimg", "test")    
+    
+#### cell profiler segmentation    
+fl <- "cells.txt" 
+obj <- loadCellP(obj, fl)
+
+tiffF <- "img.tiff"
+obj <- loadTiffs(obj, tiffF)  
+obj <- featSel(obj)
+
+#require(pheatmap)
+#pheatmap(data.matrix(obj@subExpr))
+
+source("~/git/FIt-SNE/fast_tsne.R", chdir=T)
+obj <- dimRed(obj)
+obj <- identCluster(obj, n=5)
+
+plotClusters(obj)
+
+visualize(obj, split=F)
+
+par(mfrow=c(1,5), mar=c(0,0,0,0))
+visualize(obj, split=T)
+
+cc <- assignCluster(obj)
+cc$f1
+
+```
+

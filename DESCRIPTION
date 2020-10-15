@@ -1,0 +1,19 @@
+Package: hypeRimg
+Title: Analysis of hyperion images 
+Version: 0.1.0
+Authors@R: 
+    person(given = "Maximilina",
+           family = "Knoll",
+           role = c("aut", "cre"),
+           email = "m.knoll@dkfz.de",
+           comment = c(ORCID = "0000-0002-9037-3980"))
+Description: Workflow for the analysis of hyperion data.
+License: GPLv3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
